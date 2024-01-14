@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<title>Gym</title>
+<style>
+    body {
+        background-color: #f0f8ff;
+        background-size: cover;
+        font-family: sans-serif;
+        font-size: 23px;
+        padding: 100px 100px 100px 100px;
+    }
+
+    img.cover {
+        width: 100%;
+        height: 5%;
+      }
+    .viewpager {
+      width: 100%;
+      height: 25%;
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto; 
+      white-space: nowrap;
+    }
+    .hint {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    .cuerpo>div {
+      display: flex;
+      white-space: nowrap;
+    }
+    .cuerpo>div>div {
+      overflow-y: auto; 
+    }
+      
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>GYM</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header style="text-align: center;">
+ 
+    <img src="/assets/portada.jpg"  id =" presentacion" width="1000" class="cover">
+    <h1>Titulo cool</h1>
+    <p>Con tantas aplicaciones de gimnasio disponibles en el mercado, puede ser difícil saber cuál es la adecuada para ti. ¿Quieres una aplicación que te ayude a perder peso? ¿Te gustaría desarrollar músculo? ¿O simplemente quieres mantenerte activo?
+      Para ayudarte a tomar una decisión, hemos analizado las principales aplicaciones de gimnasio en términos de los ejercicios que ofrecen.</p>
+  </header>
+
+  <main>
+    <script src="/scripts/main.js"></script>
+    <section id="apps" style="text-align: center;">
+      <h2>Algunas de las aplicaciones mas comunes que encontramos en la web:</h2>
+      <p>En los últimos años, el número de aplicaciones de gimnasio ha aumentado considerablemente. Estas aplicaciones ofrecen una variedad de funciones, desde planes de entrenamiento personalizados hasta seguimiento de la actividad..</p>
+
+      <!-- ViewPager con Hint -->
+      <script src="/scripts/view-pager.js"></script>
+      <div id="viewpager" class="viewpager"></div>
+      <div class="hint" id="hint"></div>
+
+   </section>
+
+    <section id="tendencias" style="text-align: center;">
+      <h2>Tendencias en las aplicaciones</h2>
+      <p>¿Sabes qué tipos de ejercicios son los más populares? ¡En esta sección, te contamos las últimas tendencias!</p>
+
+      <p>aqui van unas estadisticas</p>
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="mapa">
+        <img src="img/mapa-gyms.png" >
+      </div>
+
+      <div class="infografia">
+        <img src="img/infografia-ejercicios.png" >
+      </div>
+
+    </section>
+
+    <section class="cuerpo" >
+      <h3  style="text-align: center;">Descubre que ejercicios complementan a estas aplicaciones</h3>
+      <p></p>
+
+      <div class="cuerpo">
+        <img id="body" src="/assets/cuerpo-humano.jpg"  width="600">
+        <div id="data-container">
+          <p id="data">test</p>
+        </div>
+      </div>
+      
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>© 2024 Maria de Lourdes Choy Fernandez</p>
+  </footer>
+
+</body>
+</html>
