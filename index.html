@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
 <title>Gym</title>
 <style>
+    
     body {
         background-color: #f0f8ff;
         background-size: cover;
-        font-family: sans-serif;
-        font-size: 23px;
-        padding: 100px 100px 100px 100px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        
     }
-
-    img.cover {
-        width: 100%;
-        height: 5%;
-      }
+    
     .viewpager {
       width: 100%;
       height: 25%;
@@ -37,76 +33,91 @@
     }
     .cuerpo>div>div {
       overflow-y: auto; 
+      max-height: 80vh;
+      overflow-x: auto; 
     }
+  
+  @keyframes my-bounce {
+    0%, 100% {
+        transform: translateY(-10%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+  }
+  .hover-animate-my-bounce:hover {
+    animation: my-bounce 1s infinite;
+  }
       
 </style>
 <head>
   <meta charset="UTF-8">
   <title>GYM</title>
+  <img src="/assets/portada.jpg" class="cover" width="100%">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body >
 
-  <header style="text-align: center;">
+  <header style="text-align: center; padding: 20px 300px 100px 300px;">
  
-    <img src="/assets/portada.jpg"  id =" presentacion" width="1000" class="cover">
-    <h1>Titulo cool</h1>
-    <p>Con tantas aplicaciones de gimnasio disponibles en el mercado, puede ser difícil saber cuál es la adecuada para ti. ¿Quieres una aplicación que te ayude a perder peso? ¿Te gustaría desarrollar músculo? ¿O simplemente quieres mantenerte activo?
-      Para ayudarte a tomar una decisión, hemos analizado las principales aplicaciones de gimnasio en términos de los ejercicios que ofrecen.</p>
-  </header>
+    <h1>Los secretos de las apps de fitness al descubierto: un estudio de datos muestra qué ejercicios hacen, qué músculos trabajan y cuáles son los mas utilizados.</h1>
+    <p >Con tantas aplicaciones de gimnasio disponibles en el mercado, puede ser difícil saber cuál es la adecuada para ti. ¿Quieres una aplicación que te ayude a perder peso? ¿Te gustaría desarrollar músculo? ¿O simplemente quieres mantenerte activo?.<br>En este artículo, te mostramos los resultados de un estudio de datos sobre las diferentes aplicaciones de gimnasio y fitness que existen en el mercado. Analizamos qué ejercicios hacen cada una, cuáles son los más populares y qué músculos trabajan. Además, te ofrecemos una imagen interactiva del cuerpo humano donde puedes seleccionar los músculos que quieres ejercitar y ver qué ejercicios te convienen más.
+    
+    
+  
+  
+    </header>
 
-  <main>
-    <script src="/scripts/main.js"></script>
+  <main style="padding: 20px 300px 100px 300px;">
+    <script src="/scripts/main.js" ></script>
     <section id="apps" style="text-align: center;">
-      <h2>Algunas de las aplicaciones mas comunes que encontramos en la web:</h2>
-      <p>En los últimos años, el número de aplicaciones de gimnasio ha aumentado considerablemente. Estas aplicaciones ofrecen una variedad de funciones, desde planes de entrenamiento personalizados hasta seguimiento de la actividad..</p>
+      <h2>Algunas de las aplicaciones mas comunes que encontramos en la web</h2>
+      <p>Las aplicaciones de gimnasio son herramientas digitales que facilitan el acceso a la información y la motivación para realizar ejercicio físico. Estas aplicaciones han experimentado un crecimiento notable en los últimos años, debido a varios factores, como la mayor conciencia sobre la salud, el auge de los dispositivos móviles y la pandemia de COVID-19, que ha obligado a muchas personas a entrenar en casa.</p>
+      <p>Las aplicaciones de gimnasio ofrecen una variedad de funciones que se adaptan a las necesidades y preferencias de cada usuario.Algunas de estas funciones son:</p>
 
+    <p><strong>•Planes de entrenamiento personalizados:</strong> Estas aplicaciones permiten crear rutinas de ejercicio a medida, según el nivel, el objetivo y el tiempo disponible de cada persona. Además, proporcionan instrucciones, vídeos y animaciones para realizar los ejercicios correctamente.</p>
+    
+    <p><strong>•Seguimiento de la actividad:</strong> Estas aplicaciones registran y analizan los datos de la actividad física, como las calorías quemadas, los pasos dados, la distancia recorrida, la frecuencia cardíaca, etc. Estos datos ayudan a monitorizar el progreso y a establecer metas y desafíos.</p>
+    
+    <p><strong>•Comunidad y redes sociales:</strong> Estas aplicaciones fomentan la interacción y el apoyo entre los usuarios, mediante funciones como compartir logros, enviar mensajes, participar en grupos, competir con amigos, etc. Estas funciones aumentan la motivación y el compromiso con el ejercicio.</p>
+    
+    <p><strong>•Contenido educativo y de entretenimiento:</strong> Estas aplicaciones ofrecen información y consejos sobre temas relacionados con el ejercicio, la nutrición, la salud, etc. También ofrecen opciones de entretenimiento, como música, podcasts, juegos, etc. Estas opciones hacen que el ejercicio sea más divertido y variado.</p>
+    
       <!-- ViewPager con Hint -->
-      <script src="/scripts/view-pager.js"></script>
-      <div id="viewpager" class="viewpager"></div>
+      <script src="/scripts/view-pager.js" ></script>
+      <div id="viewpager" class="viewpager" style="font-size: 20px"></div>
       <div class="hint" id="hint"></div>
 
    </section>
 
     <section id="tendencias" style="text-align: center;">
       <h2>Tendencias en las aplicaciones</h2>
-      <p>¿Sabes qué tipos de ejercicios son los más populares? ¡En esta sección, te contamos las últimas tendencias!</p>
-
-      <p>aqui van unas estadisticas</p>
+      <p>¿Sabes qué tipos de ejercicios son los más populares? ¡En esta sección, te contamos las últimas tendencias! </p>
+      <p>Se muestran los resultados de un análisis de datos sobre los tipos de ejercicios más populares que te recomiendan las apps de fitness. Basándonos en la información de casi 30 aplicaciones, hemos identificado los ejercicios que más se repiten,y los que más satisfacción generan entre los usuarios. Descubre con nosotros qué ejercicios son los más adecuados para ti, y cómo puedes aprovechar al máximo las apps de fitness para mejorar tu salud y tu bienestar.</p>
+      
+      
       <div>
         <canvas id="myChart"></canvas>
-      </div>
-
-      <div class="mapa">
-        <img src="img/mapa-gyms.png" >
-      </div>
-
-      <div class="infografia">
-        <img src="img/infografia-ejercicios.png" >
       </div>
 
     </section>
 
     <section class="cuerpo" >
-      <h3  style="text-align: center;">Descubre que ejercicios complementan a estas aplicaciones</h3>
-      <p></p>
+      <h3  style="text-align: center;font-size: 45px;">Descubre que ejercicios complementan a estas aplicaciones</h3>
+      <p>Algunos de los principales grupos musculares y los ejercicios que se pueden realizar para trabajarlos son los siguientes:</p>
 
       <div class="cuerpo">
-        <img id="body" src="/assets/cuerpo-humano.jpg"  width="600">
+        <img id="body" src="/assets/cuerpo-humano.jpg"  width="700">
         <div id="data-container">
-          <p id="data">test</p>
+          <p id="data" style="font-size: 20px">Toca el grupo muscular deseado.<br>Aparecerá la lista de ejercicios y sus herramientas</p>
         </div>
       </div>
       
-
     </section>
-
   </main>
 
-
-  <footer>
-    <p>© 2024 Maria de Lourdes Choy Fernandez</p>
-  </footer>
 
 </body>
 </html>

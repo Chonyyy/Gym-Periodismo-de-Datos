@@ -356,30 +356,60 @@ document.body.onload = () => {
     const pX = Math.round((x / img.width) * 100);
     const pY = Math.round((y / img.height) * 100);
 
-    findBodyPart(pX , pY , txt);
-    console.log("X: " + pX + ", Y: " + pY);
+    findBodyPart(pX, pY, txt);
+    //console.log("X: " + pX + ", Y: " + pY);
   });
 
   const bodyParts = {
     "Antebrazos": [
-      {sx: 13 , sy: 39 , ex: 17, ey:50},
-      {sx: 37 , sy: 39 , ex: 42, ey:50},
-      {sx: 56 , sy: 40 , ex: 61, ey:51},
-      {sx: 80 , sy: 40 , ex: 86, ey:51}]
+      { sx: 13, sy: 39, ex: 17, ey: 50 },
+      { sx: 37, sy: 39, ex: 42, ey: 50 },
+      { sx: 56, sy: 40, ex: 61, ey: 51 },
+      { sx: 80, sy: 40, ex: 86, ey: 51 }],
+    "Abductores": [
+      { sx: 23, sy: 48, ex: 27, ey: 62 },
+      { sx: 30, sy: 48, ex: 32, ey: 62 }
+    ],
+    "Cuádriceps": [
+      { sx: 18, sy: 52, ex: 36, ey: 70 }
+    ],
+    "Isquiotibiales": [
+      { sx: 61, sy: 56, ex: 79, ey: 70 }
+    ],
+    "Abdominales": [
+      { sx: 23, sy: 32, ex: 32, ey: 50 }
+    ],
+    "Bíceps": [
+      { sx: 15, sy: 29, ex: 19, ey: 38 },
+      { sx: 37, sy: 29, ex: 42, ey: 38 }
+    ],
+    "Trapecios": [
+      { sx: 19, sy: 17, ex: 37, ey: 22 },
+      { sx: 63, sy: 17, ex: 79, ey: 22 }
+    ],
+    "Glúteos": [
+      { sx: 62, sy: 46, ex: 79, ey: 56 }
+    ],
+    "Gemelos": [
+      { sx: 64, sy: 73, ex: 78, ey: 82 }
+    ]
+
   }
 
-  const findBodyPart = (x, y , _txt) => {
-    for(let bp in bodyParts){
-      bodyParts[bp].forEach(e => {
-        if(x >= e.sx && y >= e.sy && x <= e.ex && y <= e.ey) {
-          let tx = "";
-          for(let d of json[bp]){
-            tx += `${d.name}: ${d.equipment}
+  const findBodyPart = (x, y, _txt) => {
+    for (let bp in bodyParts) {
+      for(let e of bodyParts[bp]) {
+        if (x >= e.sx && y >= e.sy && x <= e.ex && y <= e.ey) {
+          let tx = ` ${bp}:
+          `;
+          for (let d of json[bp]) {
+            tx += `${d.name} - ${d.equipment}
             `;
           }
           _txt.innerText = tx;
+          return;
         }
-      });
+      };
     }
   }
 

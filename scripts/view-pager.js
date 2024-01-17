@@ -11,7 +11,6 @@ const addPage = (name, img, data) => {
     div.style.height = "15vw";
     div.style.width = "15vw";
     div.style.position = "relative";
-    //div.style.backgroundColor = "#ff0000";
     const viewpager = document.getElementById("viewpager");
     viewpager.appendChild(div);
 
@@ -25,8 +24,10 @@ const addPage = (name, img, data) => {
     txt.style.padding = 0;
     txt.style.margin = 0;
     txt.style.height = "16%";
+    txt.style.whiteSpace = "normal"; // Asegura que el texto se ajuste al espacio disponible
     txt.innerText = name;
     div.appendChild(txt);
+    
 
     const hint = document.getElementById("hint");
 
@@ -38,6 +39,7 @@ const addPage = (name, img, data) => {
         hint.style.display = "block";
         hint.style.top = rect.top + window.scrollY + "px";
         hint.style.left = rect.left + window.scrollX + "px";
+        div.classList.add('hover-animate-my-bounce');
     });
 
 
