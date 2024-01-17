@@ -156,7 +156,7 @@ document.body.onload = () => {
     data: {
       labels: sds.sortedNames,
       datasets: [{
-        label: 'Ejercicios mas usados.',
+        label: 'Cantidad de aplicaciones en las que aparece:',
         data: sds.sortedCounts,
         borderWidth: 1
       }]
@@ -343,21 +343,17 @@ document.body.onload = () => {
 
   };
 
-
-
   const img = document.getElementById("body");
   const txt = document.getElementById("data");
+
   img.addEventListener("click", function (event) {
 
     const x = event.clientX - img.getBoundingClientRect().left;
     const y = event.clientY - img.getBoundingClientRect().top;
-
-
     const pX = Math.round((x / img.width) * 100);
     const pY = Math.round((y / img.height) * 100);
 
     findBodyPart(pX, pY, txt);
-    //console.log("X: " + pX + ", Y: " + pY);
   });
 
   const bodyParts = {
